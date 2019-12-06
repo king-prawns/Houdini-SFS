@@ -3,13 +3,15 @@
 }
 
 #cool {
-  --color: cyan;
   --multiplier: 0.24;
   --pad: 30;
   --slant: 20;
-  --my-background: (ctx, geom) => {
+  /* --my-background: (ctx, geom) => {
     let multiplier = var(--multiplier);
-    let c = `var(--color)`;
+    let red = Math.random()*255
+    let green = Math.random()*255
+    let blue = Math.random()*255
+    const rgb = `rgb(${red},${green},${blue})`
     let pad = var(--pad);
     let slant = var(--slant);
 
@@ -17,8 +19,8 @@
     ctx.lineTo(pad + (geom.width - slant - pad) * multiplier, 0);
     ctx.lineTo(pad + (geom.width - slant - pad) * multiplier + slant, geom.height);
     ctx.lineTo(0, geom.height);
-    ctx.fillStyle = c;
+    ctx.fillStyle = rgb;
     ctx.fill();
-  };
+  }; */
   background: paint(mybackground);
 }
