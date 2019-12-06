@@ -1,15 +1,15 @@
 registerPaint('mybackground', class {
   static get inputProperties() {
-      return ['--multiplier', '--color', '--pad', '--slant'];
+      return ['--multiplier', '--pad', '--slant'];
   }
   paint(ctx, size, properties) {
-    let multiplier = +properties.get('--multiplier');
+    let multiplier = properties.get('--multiplier').value;
     let red = Math.random()*255
     let green = Math.random()*255
     let blue = Math.random()*255
     const rgb = `rgb(${red},${green},${blue})`
-    let pad = +properties.get('--slant');
-    let slant = +properties.get('--slant');
+    let pad = properties.get('--pad').value;
+    let slant = properties.get('--slant').value;
 
     ctx.moveTo(0, 0);
     ctx.lineTo(pad + (size.width - slant - pad) * multiplier, 0);
